@@ -25,7 +25,7 @@ public class DqlExceptionHandler implements WebExceptionHandler{
 	public Mono<Void> handle(ServerWebExchange exchange, Throwable ex) {
 		
 		if ( !(ex instanceof DqlException) ) {
-			ex = new DqlException(ResultCode.DQL);
+			ex = new DqlException(ResultCode.UNKNOWN_SERVER_ERROR);
 		}
 		
 		try {
